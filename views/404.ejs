@@ -1,0 +1,15 @@
+<%- include('partials/head.ejs') %>
+
+<h1>404 - I know you like books but i couldn't find the page you requested...</h1>
+<p>Maybe you made a typo or tried to request a book we haven't got a page for yet. You can either go back to <a href="/">our homepage</a> or leave us a message if you think we made a mistake and should correct it:</p>
+  
+<form action="/" method="post" >
+  <label for="email">Email address:</label>
+    <input type="text" name="email" id="email" />
+    <label for="mesg">Message:</label>
+    <textarea id="mesg" name="mesg" cols="30" rows="10"></textarea>
+  <label for="submit"></label>
+    <input type="submit" id="submit" name="submit" value="Send us your message!" />
+</form>
+
+<%- include('partials/foot.ejs') %>

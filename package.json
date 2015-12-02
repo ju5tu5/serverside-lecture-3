@@ -1,0 +1,16 @@
+{
+  "name": "DoSomethingWithBooks",
+  "version": "0.0.1",
+  "private": true,
+  "description": "This awesome script does something.. with books.",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1",
+    "express-session": "^1.12.1",
+    "xss-filters":"^1.2.6"
+  },
+  "author": "Justus Sturkenboom <j.p.sturkenboom@hva.nl>",
+  "license": "ISC"
+}

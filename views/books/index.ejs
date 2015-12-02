@@ -1,0 +1,11 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>Books in our repository</h1>
+
+<ul>
+<% for(var i=0; i<books.length; i++) { %>
+    <li><a href="/books/<%= i %>"><%= books[i].author %> - <%= books[i].title%></a></li>
+<% } %>
+</ul>
+
+<%- include('../partials/foot.ejs') %>
