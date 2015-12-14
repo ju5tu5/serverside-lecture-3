@@ -4,7 +4,7 @@
 
 <ul>
 <% for(var i=0; i<books.length; i++) { %>
-    <li><a href="/books/<%= i %>"><%= books[i].author %> - <%= books[i].title%></a></li>
+    <li><a href="/books/<%= books[i].bookID %>"><%= books[i].author %> - <%= books[i].title%></a></li>
 <% } %>
 </ul>
 

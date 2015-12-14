@@ -1,0 +1,11 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>We like books but we like files too...</h1>
+<p>Have a look at the files listed here. We think they are pretty interesting.. don't you? If not.. why?</p>
+<ul>
+  <% for(var i=0; i<files.length; i++) { %>
+  <li><a href="/uploads/<%= files[i] %>"><%= files[i] %></a></li>
+  <% } %>
+</ul>
+
+<%- include('../partials/foot.ejs') %>

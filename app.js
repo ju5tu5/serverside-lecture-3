@@ -1,19 +1,35 @@
 // Load modules
-var express = require('express'),
-    path = require('path'),
+var path = require('path'), // core
+    express = require('express'),
     bodyParser = require('body-parser'),
-    session = require('express-session');
+    session = require('express-session'),
+    multer = require('multer'),
+    mysql = require('mysql'),
+    myConnection = require('express-myconnection');
+
+// Define upload dir
+var upload = multer({dest: 'public/uploads/'});
 
 // Define routers
 var indexRouter = require('./routes/index'),
     booksRouter = require('./routes/books'),
-    secretRouter = require('./routes/secrets'),
+    downloadsRouter = require('./routes/downloads'),
+    adminRouter = require('./routes/admin'),
     errorRouter = require('./routes/error');
 
 // Set up the app
 var app = express();
 
-// Use session
+// Connect to MySQL
+app.use(myConnection(mysql, {
+  host: 'localhost',
+  user: 'student',
+  password: 'serverSide',
+  port: 3306,
+  database: 'student'
+}, 'single'));
+
+// Use sessions
 app.use(session({
   secret: "SomeoneToldMeThisWebsiteIsAboutBooksOrSomething",
   resave: false,
@@ -34,7 +50,8 @@ app.use(express.static('public'));
 // Connect the routers to routes
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
-app.use('/secrets', secretRouter);
+app.use('/downloads', downloadsRouter);
+app.use('/admin', upload.single('bs-file'), adminRouter);
 
 // If no routes handled the request, we clearly have an error
 app.use(errorRouter);

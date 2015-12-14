@@ -1,0 +1,14 @@
+<%- include('../partials/head.ejs') %>
+
+<%- include('../partials/adminMenu.ejs') %>
+
+<form action="<%= req.baseUrl + "/login" %>" method="post">
+  <label for="Username">Username:</label>
+    <input type="text" name="username" id="username" value="" />
+  <label for="password">Password:</label>
+    <input type="password" name="password" value="" />
+  <label for="submit"></label>
+    <input type="submit" id="submit" value="Login!" />
+</form>
+        
+<%- include('../partials/foot.ejs') %>

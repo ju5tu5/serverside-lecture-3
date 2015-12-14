@@ -1,0 +1,12 @@
+<%- include('../partials/head.ejs') %>
+
+<%- include('../partials/adminMenu.ejs') %>
+
+<form action="<%= req.baseUrl + "/upload" %>" method="post" enctype="multipart/form-data">
+  <label for="bs-file">File:</label>
+    <input type="file" name="bs-file" id="bs-file" value="" />
+  <label for="submit"></label>
+    <input type="submit" id="submit" value="Upload!" />
+</form>
+        
+<%- include('../partials/foot.ejs') %>
